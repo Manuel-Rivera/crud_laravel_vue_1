@@ -570,7 +570,8 @@ export default {
         },async saveItem(){
             if(this.typeAction=="add"){
                 try {
-                    await axios.post('/alumnos/',this.copyItem)
+                    //Es importante quitar la ultima diagonal en post
+                    await axios.post('/alumnos',this.copyItem)
                     this.initialize();
                 } catch (error) {
                     console.log(error);
