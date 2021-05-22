@@ -13,13 +13,13 @@ const routes = [{
             name: 'Crud',
             path: '/',
             component: () =>
-                import ('../views/components/DashBoard/Crud'),
+                import ('../views/components/DashBoard'),
         },
         {
-            name: 'other',
-            path: '/other',
+            name: 'calendar',
+            path: '/calendar',
             component: () =>
-                import ('../components/two')
+                import ('../views/components/Calendar')
         }
     ]
 }]

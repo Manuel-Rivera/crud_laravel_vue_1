@@ -37,9 +37,9 @@ export default {
                 to: '/'
              },
              {
-                icon: 'mdi-chart-bubble',
-                title: 'Other component',
-                to: '/other'
+                icon: 'mdi-calendar ',
+                title: 'Calendar',
+                to: '/calendar'
              }
              ]
        }
