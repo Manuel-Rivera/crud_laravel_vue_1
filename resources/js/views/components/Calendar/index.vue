@@ -25,19 +25,40 @@
                      <!--
                        @mouseup:time="endDrag"
                     @mouseleave.native="cancelDrag" -->
-                    <template v-slot:event="{ event, timed, eventSummary }">
-                        <div
-                        class="v-event-draggable"
-                        v-html="eventSummary()"
-                        ></div>
-                        <div
-                        v-if="timed"
-                        class="v-event-drag-bottom"
-                        @mousedown.stop="extendBottom(event)"
-                        ></div>
-                    </template>
-                    </v-calendar>
-                </v-sheet>
+            <template v-slot:event="{ event, timed, eventSummary }">
+                        <v-tooltip bottom>
+
+
+
+                                <template v-slot:activator="{ on }">
+
+                                    <div
+
+                                    style="height:100%"
+                                    class="v-event-draggable"
+                                    v-html="eventSummary()"
+                                    v-on="on"
+                                    ></div>
+                                  <!-- <div
+                                  v-if="timed"
+                                  class="v-event-drag-bottom"
+                                  @mousedown.stop="extendBottom(event)"
+                                  ></div> -->
+
+                                    </template>
+                                    <div>
+                                      <div>{{event}}</div>
+                                    </div>
+                          </v-tooltip>
+                        </template>
+
+
+
+
+
+
+                        </v-calendar>
+                    </v-sheet>
                 </v-col>
             </v-row>
             <!-- {{events}} -->
@@ -56,14 +77,12 @@
     //   ],
       grupos:{
           "calculoI":[
-            { "name": "Calculo I", "color": "#2196F3", "start": 1621354500000, "end": 1621354600000, "timed": true },
-            { "name": "Calculo I", "color": "red", "start": 1621282700000, "end": 1621285600000, "timed": true },
-            { "name": "Calculo I", "color": "#757575", "start": 1621281600000, "end": 1621284300000, "timed": true },
+            { "name": "Calculo I", "color": "#2196F3", "start": 1621864500000, "end": 1621865000000, "timed": true },
+            { "name": "Calculo I", "color": "#757575", "start": 1621964500000, "end": 1621965500000, "timed": true },
           ],
           "calculoII":[
-            { "name": "Calculo II", "color": "red", "start": 1621291700000, "end": 1621294400000, "timed": true },
-            { "name": "Calculo II", "color": "#757575", "start": 1621291700000, "end": 1621294400000, "timed": true },
-            { "name": "Calculo II", "color": "#757575", "start": 1621291700000, "end": 1621294400000, "timed": true },
+            { "name": "Calculo II", "color": "red", "start": 1621894500000, "end": 1621904500000, "timed": true },
+            { "name": "Calculo II", "color": "#757575", "start": 1621974500000, "end": 1621976500000, "timed": true },
           ]
       },
       colors: ['#2196F3', '#3F51B5', '#673AB7', '#00BCD4', '#4CAF50', '#FF9800', '#757575'],
@@ -118,6 +137,7 @@
       },
       startTime (tms) {
         const mouse = this.toTime(tms)
+        console.log(mouse);
         let {dragEvent}=this
         dragEvent.forEach((event)=>{
           //console.log({...event,dragTime:(mouse-event.start)});
