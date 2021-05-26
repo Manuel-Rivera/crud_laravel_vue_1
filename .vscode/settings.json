@@ -1,0 +1,39 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 30,
+            "database": "HCT",
+            "dialect": "MySQL",
+            "name": "MYSQLHCTconecction",
+            "password": "Desdelejos24",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root",
+            "driver": "MySQL"
+        },
+        {
+            "connectionTimeout": 30,
+            "database": "VerificaGsuite",
+            "dialect": "MySQL",
+            "name": "MYSQLVerificaGsuite",
+            "password": "Desdelejos24",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root",
+            "driver": "MySQL"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "Laravel_vue",
+            "database": "laravel_vue_1",
+            "username": "root",
+            "password": "Desdelejos24"
+        }
+    ]
+}
